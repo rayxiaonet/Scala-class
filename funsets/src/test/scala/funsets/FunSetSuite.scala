@@ -88,6 +88,7 @@ class FunSetSuite extends FunSuite {
    */
   test("singletonSet(1) contains 1") {
 
+
     /**
      * We create a new instance of the "TestSets" trait, this gives us access
      * to the values "s1" to "s3".
@@ -98,6 +99,9 @@ class FunSetSuite extends FunSuite {
        * the test fails. This helps identifying which assertion failed.
        */
       assert(contains(s1, 1), "Singleton")
+      assert(contains(union(s1,s2),1))
+     // printSet(map(union(s3,union(s1,s2)),x=>x-1))
+      contains(map(union(s3,union(s1,s2)),x=>x-1),1)
     }
   }
 
